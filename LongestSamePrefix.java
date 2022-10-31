@@ -11,14 +11,14 @@ public class LongestSamePrefix {
 		if (string.length == 1)
 			return string[0];
 
-		Arrays.sort(string);
+		Arrays.sort(string);//O(nlogn)
 
 		int minString = Math.min(string[0].length(), string[string.length - 1].length());
 
 		int i = 0;
 		while (i < minString && string[0].charAt(i) == string[string.length - 1].charAt(i))
 			i++;
-
+//O(maximum step = min string length)
 		String prefix = string[0].substring(0, i);
 		return prefix;
 	}
@@ -28,3 +28,4 @@ public class LongestSamePrefix {
 		System.out.println("The longest same prefix is :" + longestSamePrefix(input));
 	}
 }
+//=>> O(nlogn)?
